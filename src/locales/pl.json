@@ -1,0 +1,18 @@
+{
+  "Added": "Dodano",
+  "Products": "produkt(y)",
+  "Back": "Wstecz",
+  "Generate": "Generuj",
+  "Next": "Dalej",
+  "ProductList": "Lista produktów",
+  "ChooseCard": "Wybierz układ karty",
+  "SetRestaurantName": " Wpisz nazwę restauracji",
+  "SetRestaurantLogo": "Załącz logo restauracji",
+  "AttachFile": "Załącz plik",
+  "RemoveFile": "Usuń plik",
+  "SearchByName": "Szukaj po nazwie",
+  "Optional": "opcjonalnie",
+  "pdfTitle": "karta",
+  "lackOfDescription": "Brak opisu produktu",
+  "creatingPdfInProgress": "Tworzenie pliku pdf..."
+}

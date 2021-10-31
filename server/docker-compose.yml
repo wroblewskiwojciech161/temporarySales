@@ -1,0 +1,56 @@
+version: '3.1'
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  mailhog:
+    image: mailhog/mailhog
+    logging:
+      driver: 'none' # disable saving logs
+    ports:
+      - 1025:1025 # smtp server
+      - 8025:8025 # web ui
+    networks:
+      - app-tier
+  db:
+    image: mysql:5.7
+    command:
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    ports:
+      - 6603:3306
+    networks:
+      - app-tier
+    environment:
+      - MYSQL_ROOT_PASSWORD=$DB_ROOT_PASSWORD
+      - MYSQL_DATABASE=$DB_DATABASE
+      - MYSQL_USER=$DB_USERNAME
+      - MYSQL_PASSWORD=$DB_PASSWORD
+      - TZ=$DB_TZ
+    volumes:
+      - db-data:/var/lib/mysql
+    cap_add:
+      - SYS_NICE
+  node_app:
+    build: ./
+    restart: on-failure
+    ports:
+      - '9000:3000'
+    networks:
+      - app-tier
+    depends_on:
+      - db
+    volumes:
+      - './src:/usr/app/src'
+      - './dist:/usr/app/dist'
+      - './.env:/usr/app/.env'
+      - './ormconfig.json:/usr/app/ormconfig.json'
+      - './nodemon.json:/usr/app/nodemon.json'
+    environment:
+      - NODE_ENV=development
+
+volumes:
+  db-data:

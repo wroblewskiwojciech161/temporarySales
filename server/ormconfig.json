@@ -1,0 +1,29 @@
+{
+  "name": "default",
+  "type": "mysql",
+  "host": "db",
+  "port": 3306,
+  "username": "admin",
+  "password": "admin",
+  "database": "NodeStartApi",
+  "charset": "utf8mb4_unicode_ci",
+  "synchronize": true,
+  "migrationsRun": true,
+  "entityPrefix": "adytcwmigy_",
+  "logging": ["error"],
+  "logger": "file",
+  "entities": [
+    "dist/models/entities/**/*.js"
+  ],
+  "subscribers": [
+    "dist/models/subscribers/**/*.js"
+  ],
+  "migrations": [
+    "dist/models/migrations/**/*.js"
+  ],
+  "cli": {
+    "entitiesDir": "dist/models/entities",
+    "migrationsDir": "dist/models/migrations",
+    "subscribersDir": "dist/models/subscribers"
+  }
+}

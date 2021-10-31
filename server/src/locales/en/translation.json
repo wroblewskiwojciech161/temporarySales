@@ -1,0 +1,11 @@
+{
+    "header": "Cieszymy się, że skorzystałeś z naszego konfiguratora okien!",
+    "subheader": "Skomponowana konfiguracja została zapisana i możesz ją zobaczyć klikając w poniższy link.",
+    "mailSubject": " Debesto - konfigurator okien.",
+    "link": {
+        "sentence": "Jeśli chcesz edytować konfigurację, możesz zrobić to",
+        "linkWord": "tutaj"
+    },
+    "makeOrder": "Złóż zamówienie",
+    "footer": "@2020 Konfigurator okien.Wszelkie prawa zastrzeżone"
+}
